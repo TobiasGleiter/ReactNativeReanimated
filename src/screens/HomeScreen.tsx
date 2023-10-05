@@ -5,9 +5,9 @@ import {
   Pressable,
   SafeAreaView,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
+import Animated, {useSharedValue} from 'react-native-reanimated';
 
 const citiesData = [
   {
@@ -36,17 +36,21 @@ const citiesData = [
 const renderItem = ({item, navigation}: any) => (
   <Pressable
     className="w-1/2 p-1 rounded-xl "
-    onPress={() => navigation.navigate('Test', {item})}>
-    <View className="rounded-lg bg-white">
+    onPress={() => navigation.navigate('Details', {item})}>
+    <Animated.View className="rounded-xl bg-zinc-300">
       <Image source={{uri: item.image}} className="w-full h-40 rounded-t-xl" />
-      <Text className="text-center p-2 font-semibold text-black bg-red-400">
-        {item.name}
-      </Text>
-    </View>
+      <View className="bg-white rounded-b-xl">
+        <Text className="text-center p-2 font-semibold text-black">
+          {item.name}
+        </Text>
+      </View>
+    </Animated.View>
   </Pressable>
 );
 
 export default function HomeScreen({navigation}: any) {
+  const sharedValue = useSharedValue(0);
+
   return (
     <SafeAreaView>
       <FlatList
@@ -55,9 +59,6 @@ export default function HomeScreen({navigation}: any) {
         keyExtractor={item => item.name}
         numColumns={2}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Test')}>
-        <Text>Test</Text>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }

@@ -8,8 +8,8 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
+import DetailScreen from './src/screens/DetailScreen';
 import HomeScreen from './src/screens/HomeScreen';
-import TestScreen from './src/screens/TestScreen';
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -20,12 +20,12 @@ function App(): JSX.Element {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Test"
-          component={TestScreen}
-          options={{headerShown: true}}
+          name="Details"
+          component={DetailScreen}
+          options={{presentation: 'card', headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>

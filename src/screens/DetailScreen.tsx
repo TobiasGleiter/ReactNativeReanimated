@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 
-const TestScreen = ({route}: any) => {
+const DetailScreen = ({route}: any) => {
   const {item} = route.params;
 
   return (
@@ -13,4 +13,4 @@ const TestScreen = ({route}: any) => {
   );
 };
 
-export default TestScreen;
+export default DetailScreen;
