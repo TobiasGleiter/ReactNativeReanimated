@@ -25,7 +25,7 @@ function App(): JSX.Element {
         <Stack.Screen
           name="Details"
           component={DetailScreen}
-          options={{presentation: 'card', headerShown: true}}
+          options={{headerShown: false, animation: 'fade'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
