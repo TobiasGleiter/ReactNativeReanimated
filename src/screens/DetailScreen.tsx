@@ -23,7 +23,7 @@ const DetailScreen = ({navigation, route}: any) => {
           entering={FadeInUp.duration(600)}
           source={{uri: item.image}}
           style={{width: '100%', height: 250}}
-          className="z-0"
+          className="z-0 bg-zinc-300"
         />
         <View className="px-6 pt-2 pb-20">
           <Animated.Text
