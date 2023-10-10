@@ -34,7 +34,7 @@ export default function HomeScreen({navigation}: any) {
       try {
         const countriesData = await getCountries(searchTerm);
         setData(countriesData);
-        console.log(countriesData);
+        //console.log(countriesData);
       } catch (error) {
         // Handle errors here
       } finally {

@@ -1,15 +1,16 @@
 // cityService.ts
 
 import axios from 'axios';
+import {keys} from '../../keys';
 
 export const getCountries = async (namePrefix: string) => {
   const options = {
     method: 'GET',
-    url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries',
+    url: keys.countries.url,
     params: {namePrefix: namePrefix, limit: '10'},
     headers: {
-      'X-RapidAPI-Key': '40da990644msh8929140ef5e088ep11742djsn359c36e53eea',
-      'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
+      'X-RapidAPI-Key': keys.countries.apiKey,
+      'X-RapidAPI-Host': keys.countries.host,
     },
   };
 
